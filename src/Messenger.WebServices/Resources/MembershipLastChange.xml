@@ -1,0 +1,7 @@
+<View xmlns="http://www.msn.com/webservices/AddressBook">Full</View>
+<deltasOnly xmlns="http://www.msn.com/webservices/AddressBook">
+  {0}
+</deltasOnly>
+<lastChange xmlns="http://www.msn.com/webservices/AddressBook">
+  {1}
+</lastChange>

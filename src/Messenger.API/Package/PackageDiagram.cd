@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Net.Protocols.Messenger.Package.AuthenticationRequest" Collapsed="true">
+    <Position X="19" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAEAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Request\AuthenticationRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.VersionRequest" Collapsed="true">
+    <Position X="20.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Request\VersionRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.EditUserPropertiesRequest" Collapsed="true">
+    <Position X="20.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAgAAAAAAAAEA=</HashCode>
+      <FileName>Package\Request\EditUsersPropertiesRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.MachineInfoRequest" Collapsed="true">
+    <Position X="24.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAEAAAAAAAAAABAAAQASgAAAAAAAEA=</HashCode>
+      <FileName>Package\Request\MachineInfoRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.PackageRequest" Collapsed="true">
+    <Position X="21.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Request\PackageRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.PrivacySettingsRequest" Collapsed="true">
+    <Position X="22.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Package\Request\PrivacySettingsRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.SyncronizeContactsRequest" Collapsed="true">
+    <Position X="19" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Request\SyncronizeContactsRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.AbstractMessageResponse" Collapsed="true">
+    <Position X="9" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAIAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Package\Response\AbstractMessageResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.AuthenticationAchievedResponse" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAACAEA=</HashCode>
+      <FileName>Package\Response\AuthenticationAchievedResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.AuthenticationResponse" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAEAAIAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Package\Response\AuthenticationResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.DeclarationResponse" Collapsed="true">
+    <Position X="4.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAQAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Response\DeclarationResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.EditUserPropertiesResponse" Collapsed="true">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAgAAAAAAAAEA=</HashCode>
+      <FileName>Package\Response\EditUserPropertiesResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.MachineInfoResponse" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAEAAAAAAAAAAEAAAAAAAAAAAABQAAAAAEAAAAAAA=</HashCode>
+      <FileName>Package\Response\MachineInfoResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.PackageResponse" Collapsed="true">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Response\PackageResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.PrivacySettingsResponse" Collapsed="true">
+    <Position X="2.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Package\Response\PrivacySettingsResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.ProfileInformationResponse" Collapsed="true">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAABAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Package\Response\ProfileInformationResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.ServerRedirectionResponse" Collapsed="true">
+    <Position X="6" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAQACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Response\ServerRedirectionResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.SyncronizeContactsResponse" Collapsed="true">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Response\SyncronizeContactsResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.VersionResponse" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Response\VersionResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.API.Package.AbstractPackage" Collapsed="true">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\AbstractPackage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.InboxMessageResponse" Collapsed="true">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAABAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Package\Response\InboxMessageResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.ChangeStatusResponse" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Response\ChangeStatusResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.ChangeStatusRequest" Collapsed="true">
+    <Position X="22.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEGAAAAAAEAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Request\ChangeStatusRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.ChallengeRequest" Collapsed="true">
+    <Position X="24.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAIAAQAAEAIAAAAAAAAAAACCAAAAAgAAAAUA=</HashCode>
+      <FileName>Package\Request\ChallengeRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.PersonalMessageRequest" Collapsed="true">
+    <Position X="19" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAEAEAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Request\PersonalMessageRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.ChallengeAchievedResponse" Collapsed="true">
+    <Position X="6" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Response\ChallengeAchievedResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.ChallengeResponse" Collapsed="true">
+    <Position X="4.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Package\Response\ChallengeResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.PersonalMessageResponse" Collapsed="true">
+    <Position X="2.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Response\PersonalMessageResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.OfflineMessageResponse" Collapsed="true">
+    <Position X="10" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAABAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Package\Response\OfflineMessageResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.AbstractPresenceNotificatonResponse" Collapsed="true">
+    <Position X="13" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEEEAAAAAEAAAAAAAAAEAAAAEAAAAAAAAAIEA=</HashCode>
+      <FileName>Package\Response\AbstractPresenceNotificatonResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.AcceptedChatInvitationResponse" Collapsed="true">
+    <Position X="2.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAEAAAAAAAAAAAABQAAAAAEAAAAAAA=</HashCode>
+      <FileName>Package\Response\AcceptedChatInvitationResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.ChangeStatusNotificationResponse" Collapsed="true">
+    <Position X="14" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Package\Response\ChangeStatusNotificationResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.ChatInvitationResponse" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAGIBAAAAQIAAAACAAAAAEAAACAAAA=</HashCode>
+      <FileName>Package\Response\ChatInvitationResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.PersonalMessageNotificationResponse" Collapsed="true">
+    <Position X="0.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIAAAAAAAAAEAEAAAAAABAAAAEAAAAAAAAAAIkA=</HashCode>
+      <FileName>Package\Response\PersonalMessageNotificationResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.RoosterResponse" Collapsed="true">
+    <Position X="4.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAgAEAAAAAgQAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Package\Response\RoosterResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.StatusEventResponse" Collapsed="true">
+    <Position X="6" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEGAAAAAAEAAAAAAAAAEAAAAEAAAAAAAAAIEA=</HashCode>
+      <FileName>Package\Response\StatusEventResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.AcceptChatInvitationRequest" Collapsed="true">
+    <Position X="20.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAGAAAAAAAIAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Package\Request\AcceptChatInvitationRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Protocols.Messenger.Package.IncomingUserMessageResponse" Collapsed="true">
+    <Position X="8" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAABAAAgAAAAAAIAAMAAAAAA=</HashCode>
+      <FileName>Package\Response\IncomingUserMessageResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

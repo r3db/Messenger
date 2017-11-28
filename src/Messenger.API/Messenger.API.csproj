@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3944402E-E78F-4A1C-B435-05619A8F7CBC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Messenger.API</RootNamespace>
+    <AssemblyName>Messenger.API</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkSubset>Full</TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\Framework\v2.0.50727\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientCapabilities.cs" />
+    <Compile Include="ClientStatus.cs" />
+    <Compile Include="NetworkId.cs" />
+    <Compile Include="ObjectDescriptor.cs" />
+    <Compile Include="Package\PackageType.cs" />
+    <Compile Include="Package\AuthorizationType.cs" />
+    <Compile Include="Package\Request\InitialPresenceNotificationRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IO\MessageBuffer.cs" />
+    <Compile Include="IO\MessageContainer.cs" />
+    <Compile Include="Utility\BitUtility.cs" />
+    <Compile Include="Utility\EnumUtility.cs" />
+    <Compile Include="Exceptions\MessengerAuthenticationException.cs" />
+    <Compile Include="Exceptions\MessengerException.cs" />
+    <Compile Include="Exceptions\MessengerProtocolException.cs" />
+    <Compile Include="Package\Request\ChatInvitationRequest.cs" />
+    <Compile Include="Package\Request\StartSwitchboardSessionRequest.cs" />
+    <Compile Include="Package\Response\IncomingUserMessageResponse.cs" />
+    <Compile Include="IO\MessageEventArgs.cs" />
+    <Compile Include="IO\MessengerReader.cs" />
+    <Compile Include="MessengerClient.cs" />
+    <Compile Include="ProtocolVersion.cs" />
+    <Compile Include="MessengerSocket.cs" />
+    <Compile Include="Mixer.cs" />
+    <Compile Include="Package\Request\AcceptChatInvitationRequest.cs" />
+    <Compile Include="Package\Request\ChallengeRequest.cs" />
+    <Compile Include="Package\Request\ChangeStatusRequest.cs" />
+    <Compile Include="Package\Request\PersonalMessageRequest.cs" />
+    <Compile Include="Package\Response\AbstractMessageResponse.cs" />
+    <Compile Include="Package\AbstractPackage.cs" />
+    <Compile Include="Package\Request\AuthenticationRequest.cs" />
+    <Compile Include="Package\Response\AcceptedChatInvitationResponse.cs" />
+    <Compile Include="Package\Response\AuthenticationResponse.cs" />
+    <Compile Include="Package\Response\AuthenticationAchievedResponse.cs" />
+    <Compile Include="Package\Response\ChallengeAchievedResponse.cs" />
+    <Compile Include="Package\Response\ChallengeResponse.cs" />
+    <Compile Include="Package\Response\ChangeStatusNotificationResponse.cs" />
+    <Compile Include="Package\Response\ChangeStatusResponse.cs" />
+    <Compile Include="Package\Response\ChatInvitationResponse.cs" />
+    <Compile Include="Package\Response\DeclarationResponse.cs" />
+    <Compile Include="Package\Request\EditUsersPropertiesRequest.cs" />
+    <Compile Include="Package\Request\PrivacySettingsRequest.cs" />
+    <Compile Include="Package\Response\EditUserPropertiesResponse.cs" />
+    <Compile Include="Package\Response\InboxMessageResponse.cs" />
+    <Compile Include="Package\Response\NotificationServerRedirectionResponse.cs" />
+    <Compile Include="Package\Response\OfflineMessageResponse.cs" />
+    <Compile Include="Package\Response\PersonalMessageNotificationResponse.cs" />
+    <Compile Include="Package\Response\PersonalMessageResponse.cs" />
+    <Compile Include="Package\Response\AbstractPresenceNotificatonResponse.cs" />
+    <Compile Include="Package\Response\PrincipalLeftChatResponse.cs" />
+    <Compile Include="Package\Response\PrivacySettingsResponse.cs" />
+    <Compile Include="Package\Request\MachineInfoRequest.cs" />
+    <Compile Include="Package\Response\MachineInfoResponse.cs" />
+    <Compile Include="Package\Request\PackageRequest.cs" />
+    <Compile Include="Package\Response\PackageResponse.cs" />
+    <Compile Include="Package\PackageTransaction.cs" />
+    <Compile Include="Package\Response\ProfileInformationResponse.cs" />
+    <Compile Include="Package\Response\RoosterResponse.cs" />
+    <Compile Include="Package\Response\ServerRedirectionResponse.cs" />
+    <Compile Include="Package\Request\SyncronizeContactsRequest.cs" />
+    <Compile Include="Package\Response\StatusEventResponse.cs" />
+    <Compile Include="Package\Response\SyncronizeContactsResponse.cs" />
+    <Compile Include="Package\Request\VersionRequest.cs" />
+    <Compile Include="Package\Response\UserTypingMessageResponse.cs" />
+    <Compile Include="Package\Response\VersionResponse.cs" />
+    <Compile Include="Parser\CommandParser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package\PackageDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Messenger.IO\Messenger.IO.csproj">
+      <Project>{C1E2157A-79C1-4B74-9848-5651559D2BC4}</Project>
+      <Name>Messenger.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Messenger.WebServices\Messenger.WebServices.csproj">
+      <Project>{F1EFDEC7-0FD6-4975-8A14-E8BAD4C84C57}</Project>
+      <Name>Messenger.WebServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\Visual Studio 2008\Projects\StateSearch\Contracts\Contracts.csproj">
+      <Project>{F06F42DA-ECB9-4F5A-A206-0D22DE8502E0}</Project>
+      <Name>Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\Visual Studio 2008\Projects\StateSearch\CustomCollections\CustomCollections.csproj">
+      <Project>{281412BA-7B45-4AAC-B0C9-2DDCE9D1DF0E}</Project>
+      <Name>CustomCollections</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

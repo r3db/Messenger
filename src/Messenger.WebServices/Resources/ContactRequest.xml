@@ -1,0 +1,51 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <soap:Header>
+    <ABApplicationHeader xmlns="http://www.msn.com/webservices/AddressBook">
+      <ApplicationId>
+        CFE80F9D-180F-4399-82AB-413F33A1FA11
+      </ApplicationId>
+      <IsMigration>
+        {0}
+      </IsMigration>
+      <PartnerScenario>
+        Initial
+      </PartnerScenario>
+    </ABApplicationHeader>
+    <ABAuthHeader xmlns="http://www.msn.com/webservices/AddressBook">
+      <ManagedGroupRequest>
+        false
+      </ManagedGroupRequest>
+      <TicketToken>{1}</TicketToken>
+    </ABAuthHeader>
+  </soap:Header>
+  <soap:Body>
+    <FindMembership xmlns="http://www.msn.com/webservices/AddressBook">
+      <serviceFilter>
+        <Types>
+          <ServiceType>
+            Messenger
+          </ServiceType>
+          <ServiceType>
+            Invitation
+          </ServiceType>
+          <ServiceType>
+            SocialNetwork
+          </ServiceType>
+          <ServiceType>
+            Space
+          </ServiceType>
+          <ServiceType>
+            Profile
+          </ServiceType>
+        </Types>
+      </serviceFilter>
+      <View xmlns="http://www.msn.com/webservices/AddressBook">Full</View>
+      <deltasOnly xmlns="http://www.msn.com/webservices/AddressBook">
+        {2}
+      </deltasOnly>
+      <lastChange xmlns="http://www.msn.com/webservices/AddressBook">
+        {3}
+      </lastChange>"
+    </FindMembership>
+  </soap:Body>
+</soap:Envelope>

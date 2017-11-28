@@ -1,0 +1,429 @@
+﻿<Window x:Class="Messenger.App.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:App="clr-namespace:Messenger.App"
+    Title="Windows Live Messenger Demo" Height="550" Width="290"
+    WindowStyle="None"
+    AllowsTransparency="True"
+    Background="Transparent" Icon="/Messenger.App;component/Chat 2.ico">
+    
+    <Window.Resources>
+
+        <!--Rectangle Start-->
+        
+        <ImageBrush x:Key="RectanglePattern"
+                    ImageSource="pack://application:,,,/Resources/Pattern.png"
+                    TileMode="Tile"
+                    ViewboxUnits="RelativeToBoundingBox"
+                    Viewport="0 0 0.2 0.1"
+                    AlignmentX="Left"
+                    AlignmentY="Top"
+                    Opacity="1">
+            <ImageBrush.Transform>
+                <RotateTransform Angle="26" />
+            </ImageBrush.Transform>
+        </ImageBrush>
+
+        <LinearGradientBrush x:Key="RectangleShade">
+            <LinearGradientBrush.Transform>
+                <RotateTransform Angle="0" />
+            </LinearGradientBrush.Transform>
+            <GradientStop Color="#BB888888" Offset="0" />
+            <GradientStop Color="#FF000000" Offset="0.95" />
+        </LinearGradientBrush>
+
+        <Style TargetType="{x:Type Rectangle}">
+            <Setter Property="RadiusX" Value="10" />
+            <Setter Property="RadiusY" Value="10" />
+        </Style>
+        
+        <!--Rectangle Close-->
+        
+        <!--Close Button Start-->
+        
+        <Style x:Key="ControlCloseButton" TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Width" Value="32" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ControlTemplate.Resources>
+                            <Storyboard x:Key="MouseEnter" TargetName="Content">
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleX)" BeginTime="00:00:00.0" To="1.3" Duration="00:00:00.14"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleY)" BeginTime="00:00:00.0" To="1.3" Duration="00:00:00.14"/>
+                            </Storyboard>
+                            <Storyboard x:Key="MouseLeave" TargetName="Content">
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleX)" BeginTime="00:00:00.0" To="1" Duration="00:00:00.2"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleY)" BeginTime="00:00:00.0" To="1" Duration="00:00:00.2"/>
+                            </Storyboard>
+                            <Storyboard x:Key="MouseDown" TargetName="Content">
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="00:00:00.0" To="0.6" Duration="00:00:00.4"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleX)" BeginTime="00:00:00.0" To="1.2" Duration="00:00:00.2"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleY)" BeginTime="00:00:00.0" To="1.2" Duration="00:00:00.2"/>
+                            </Storyboard>
+                            <Storyboard x:Key="MouseUp" TargetName="Content">
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="00:00:00.0" To="1" Duration="00:00:00.3"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleX)" BeginTime="00:00:00.0" To="1.3" Duration="00:00:00.2"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleY)" BeginTime="00:00:00.0" To="1.3" Duration="00:00:00.2"/>
+                            </Storyboard>
+                        </ControlTemplate.Resources>
+                        <Grid x:Name="Content" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                            </Grid.RenderTransform>
+                            <Image Source="pack://application:,,,/Resources/Close.ico" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                                <BeginStoryboard Storyboard="{StaticResource MouseEnter}"/>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                                <BeginStoryboard Storyboard="{StaticResource MouseLeave}"/>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Mouse.PreviewMouseDown">
+                                <BeginStoryboard Storyboard="{StaticResource MouseDown}"/>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Mouse.PreviewMouseUp">
+                                <BeginStoryboard Storyboard="{StaticResource MouseUp}"/>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="ControlMinimizeButton" TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Width" Value="32" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ControlTemplate.Resources>
+                            <Storyboard x:Key="MouseEnter" TargetName="Content">
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleX)" BeginTime="00:00:00.0" To="1.3" Duration="00:00:00.14"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleY)" BeginTime="00:00:00.0" To="1.3" Duration="00:00:00.14"/>
+                            </Storyboard>
+                            <Storyboard x:Key="MouseLeave" TargetName="Content">
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleX)" BeginTime="00:00:00.0" To="1" Duration="00:00:00.2"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleY)" BeginTime="00:00:00.0" To="1" Duration="00:00:00.2"/>
+                            </Storyboard>
+                            <Storyboard x:Key="MouseDown" TargetName="Content">
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="00:00:00.0" To="0.6" Duration="00:00:00.4"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleX)" BeginTime="00:00:00.0" To="1.2" Duration="00:00:00.2"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleY)" BeginTime="00:00:00.0" To="1.2" Duration="00:00:00.2"/>
+                            </Storyboard>
+                            <Storyboard x:Key="MouseUp" TargetName="Content">
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="00:00:00.0" To="1" Duration="00:00:00.3"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleX)" BeginTime="00:00:00.0" To="1.3" Duration="00:00:00.2"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleY)" BeginTime="00:00:00.0" To="1.3" Duration="00:00:00.2"/>
+                            </Storyboard>
+                        </ControlTemplate.Resources>
+                        <Grid x:Name="Content" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                            </Grid.RenderTransform>
+                            <Image Source="pack://application:,,,/Resources/Minimize.ico" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                                <BeginStoryboard Storyboard="{StaticResource MouseEnter}"/>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                                <BeginStoryboard Storyboard="{StaticResource MouseLeave}"/>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Mouse.PreviewMouseDown">
+                                <BeginStoryboard Storyboard="{StaticResource MouseDown}"/>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Mouse.PreviewMouseUp">
+                                <BeginStoryboard Storyboard="{StaticResource MouseUp}"/>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!--UserImage Start-->
+        
+        <!--Close Button Close-->
+        
+        <!--UserImage Start-->
+        
+        <Style x:Key="UserImage" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ControlTemplate.Resources>
+                            <Storyboard x:Key="MouseEnter" TargetName="Content">
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleX)" BeginTime="00:00:00.0" To="1.13" Duration="00:00:00.14"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleY)" BeginTime="00:00:00.0" To="1.13" Duration="00:00:00.14"/>
+                            </Storyboard>
+                            <Storyboard x:Key="MouseLeave" TargetName="Content">
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleX)" BeginTime="00:00:00.0" To="1" Duration="00:00:00.2"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleY)" BeginTime="00:00:00.0" To="1" Duration="00:00:00.2"/>
+                            </Storyboard>
+                            <Storyboard x:Key="MouseDown" TargetName="Content">
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="00:00:00.0" To="0.6" Duration="00:00:00.4"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleX)" BeginTime="00:00:00.0" To="1.1" Duration="00:00:00.2"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleY)" BeginTime="00:00:00.0" To="1.1" Duration="00:00:00.2"/>
+                            </Storyboard>
+                            <Storyboard x:Key="MouseUp" TargetName="Content">
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="00:00:00.0" To="1" Duration="00:00:00.4"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleX)" BeginTime="00:00:00.0" To="1.13" Duration="00:00:00.2"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Grid.RenderTransform).(ScaleTransform.ScaleY)" BeginTime="00:00:00.0" To="1.13" Duration="00:00:00.2"/>
+                            </Storyboard>
+                        </ControlTemplate.Resources>
+                        <Grid x:Name="Content" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <ScaleTransform ScaleX="1" ScaleY="1"></ScaleTransform>
+                            </Grid.RenderTransform>
+                            <Image Source="pack://application:,,,/Resources/UserImage.png" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                                <BeginStoryboard Storyboard="{StaticResource MouseEnter}"/>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                                <BeginStoryboard Storyboard="{StaticResource MouseLeave}"/>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Mouse.PreviewMouseDown">
+                                <BeginStoryboard Storyboard="{StaticResource MouseDown}"/>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Mouse.PreviewMouseUp">
+                                <BeginStoryboard Storyboard="{StaticResource MouseUp}"/>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!--UserImage Close-->
+        
+        <!--TextBox Start-->
+        
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Width" Value="170" />
+            <Setter Property="Margin" Value="0 6 0 0" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="{x:Null}" />
+        </Style>
+        
+        <Style TargetType="{x:Type PasswordBox}">
+            <Setter Property="Width" Value="170" />
+            <Setter Property="Margin" Value="0 6 0 0" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="{x:Null}" />
+        </Style>
+        
+        <!--TextBox Close-->
+
+        <Style TargetType="Button" x:Key="OrangeGel">
+            <Setter Property="Width" Value="NaN"/>
+            <Setter Property="MinWidth" Value="0"/>
+            <Setter Property="Height" Value="NaN"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="Padding" Value="4,4,4,4"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <SolidColorBrush>#FF7C4400</SolidColorBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextElement.FontWeight" Value="SemiBold"/>
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border Margin="1,1,1,1" CornerRadius="6,6,6,6" Name="background">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0" Color="#FFFBD19E" />
+                                            <GradientStop Offset="1" Color="#FFF68F15" />
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Grid Margin="1,1,1,1" ClipToBounds="True">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Ellipse Margin="10,3,10,3" Width="{TemplateBinding FrameworkElement.Width}" Fill="#FFFFFFFF" Opacity="0.3" Grid.Row="0" Grid.RowSpan="2">
+                                        <Ellipse.BitmapEffect>
+                                            <BlurBitmapEffect />
+                                        </Ellipse.BitmapEffect>
+                                    </Ellipse>
+                                    <Ellipse Width="{TemplateBinding FrameworkElement.Width}" Fill="#FFFFFFFF" Opacity="0.34" Grid.Row="0" />
+                                </Grid>
+                            </Border>
+                            <Border Margin="1,1,1,1" BorderBrush="#FFFFFFFF" CornerRadius="6,6,6,6" BorderThickness="5,5,0,0" Opacity="0.3">
+                                <Border.BitmapEffect>
+                                    <BlurBitmapEffect Radius="1" />
+                                </Border.BitmapEffect>
+                            </Border>
+                            <Border Margin="1,1,1,1" BorderBrush="#FF000000" CornerRadius="6,6,6,6" BorderThickness="0,0,0.6,0.6" Opacity="1">
+                                <Border.BitmapEffect>
+                                    <BlurBitmapEffect Radius="1" />
+                                </Border.BitmapEffect>
+                            </Border>
+                            <ContentPresenter Margin="{TemplateBinding Control.Padding}" HorizontalAlignment="Center" VerticalAlignment="Center" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Content="{TemplateBinding ContentControl.Content}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <Storyboard.Children>
+                                                <ColorAnimation To="#FFFBD19E" FillBehavior="HoldEnd" Duration="00:00:00.4000000" Storyboard.TargetName="background" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops).[0].(GradientStop.Color)" />
+                                                <ColorAnimation To="#FFF68F15" FillBehavior="HoldEnd" Duration="00:00:00.4000000" Storyboard.TargetName="background" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops).[1].(GradientStop.Color)" />
+                                            </Storyboard.Children>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <Storyboard.Children>
+                                                <ColorAnimation To="#FFFAF688" FillBehavior="HoldEnd" Duration="00:00:00.2000000" Storyboard.TargetName="background" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops).[0].(GradientStop.Color)" />
+                                                <ColorAnimation To="#FFF6D415" FillBehavior="HoldEnd" Duration="00:00:00.2000000" Storyboard.TargetName="background" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops).[1].(GradientStop.Color)" />
+                                            </Storyboard.Children>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                            </Trigger>
+                            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <Storyboard.Children>
+                                                <ColorAnimation To="#FFFAF688" FillBehavior="Stop" Duration="00:00:00.4000000" Storyboard.TargetName="background" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops).[0].(GradientStop.Color)" />
+                                                <ColorAnimation To="#FFF6D415" FillBehavior="Stop" Duration="00:00:00.4000000" Storyboard.TargetName="background" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops).[1].(GradientStop.Color)" />
+                                            </Storyboard.Children>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <Storyboard.Children>
+                                                <ColorAnimation To="#FFFAA182" FillBehavior="HoldEnd" Duration="00:00:00.2000000" Storyboard.TargetName="background" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops).[0].(GradientStop.Color)" />
+                                                <ColorAnimation To="#FFFD6420" FillBehavior="HoldEnd" Duration="00:00:00.2000000" Storyboard.TargetName="background" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops).[1].(GradientStop.Color)" />
+                                            </Storyboard.Children>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+    
+    <Grid MouseDown="MainWindow_MouseDown" Margin="0 0 10 0">
+        <Rectangle Fill="{StaticResource RectanglePattern}" />
+        <Rectangle Fill="{StaticResource RectangleShade}" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 10 10 0">
+                <Button Style="{StaticResource ControlMinimizeButton}" Click="Button_Click_1" />
+                <Button Style="{StaticResource ControlCloseButton}" Click="Button_Click" />
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="ContentHolder" Opacity="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="12" />
+                <RowDefinition Height="160" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="180*" />
+            </Grid.RowDefinitions>
+            <Button x:Name="UserImage" Grid.Row="2" Width="160" Cursor="Hand" Style="{StaticResource UserImage}" />
+            <Grid Grid.Row="4" x:Name="UserName">
+                <Image Source="pack://application:,,,/Resources/Ribbon.png" />
+                <TextBox x:Name="UserNameText">eusouoironman@hotmail.com</TextBox>
+            </Grid>
+            <Grid Grid.Row="6" x:Name="UserPassword">
+                <Image Source="pack://application:,,,/Resources/Ribbon.png" />
+                <PasswordBox Password="ohudhqar" x:Name="UserPasswordText" />
+            </Grid>
+            <Button x:Name="Enter" Grid.Row="8" Width="184" Height="40" Content="Log In" Style="{StaticResource OrangeGel}" Click="Enter_Click">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation From="1" To="0.1" Duration="0:0:0.40" Storyboard.TargetName="ContentHolder" Storyboard.TargetProperty="Opacity"/>
+                                <DoubleAnimation From="0" To="1" Duration="0:0:2" Storyboard.TargetName="Loader" Storyboard.TargetProperty="Opacity"/>
+                                <DoubleAnimation From="1" To="0.3" BeginTime="0:0:2" Duration="0:0:1" Storyboard.TargetName="Loader" Storyboard.TargetProperty="Opacity" AutoReverse="True" RepeatBehavior="Forever"/>
+                                <DoubleAnimation From="0" To="359" Duration="0:0:2" RepeatBehavior="Forever" Storyboard.TargetName="Angle" Storyboard.TargetProperty="Angle"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </Grid>
+        <Canvas Visibility="Hidden" Cursor="Hand" x:Name="Loader" Margin="0 370 0 0" Width="90" Height="90" RenderTransformOrigin="0.5,0.5" Opacity="0" PreviewMouseLeftButtonDown="Loader_MouseDown">
+            <Canvas.RenderTransform>
+                <RotateTransform x:Name="Angle" Angle="0" CenterX="0.5" CenterY="0.5"/>
+            </Canvas.RenderTransform>
+            <Canvas.Triggers>
+                <EventTrigger RoutedEvent="Canvas.PreviewMouseLeftButtonDown">
+                    <BeginStoryboard x:Name="LoaderStoryboard">
+                        <Storyboard>
+                            <DoubleAnimation To="1" Duration="0:0:0.40" Storyboard.TargetName="ContentHolder" Storyboard.TargetProperty="Opacity"/>
+                            <DoubleAnimation To="0" Duration="0:0:0.20" Storyboard.TargetName="Loader" Storyboard.TargetProperty="Opacity"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Canvas.Triggers>
+            <Path Stretch="Uniform" Stroke="Red" StrokeThickness="13" StrokeEndLineCap="Triangle" StrokeDashCap="Round" StrokeStartLineCap="Round" Width="90" Height="90">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure StartPoint="40,40">
+                            <ArcSegment RotationAngle="90" SweepDirection="Clockwise" IsLargeArc="True" Size="80,80"/>
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+        </Canvas>
+        
+        <Grid x:Name="ContactsHolder" Opacity="1" Margin="10 0 10 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="128" />
+                <RowDefinition Height="370" />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Width="128" Cursor="Hand" HorizontalAlignment="Left" Style="{StaticResource UserImage}" />
+            <TreeView Grid.Row="1"
+                      Background="Transparent"
+                      ItemsSource="{x:Static App:Window1.contacts}"
+                      BorderBrush="Transparent" TextBlock.FontSize="16" BorderThickness="0" IsTextSearchEnabled="True">
+                <TreeView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=DisplayName}" Width="220" Height="22">
+                            
+                            <TextBlock.Effect>
+                                <DropShadowEffect />
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </DataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </Grid>
+        
+    </Grid>
+
+</Window>

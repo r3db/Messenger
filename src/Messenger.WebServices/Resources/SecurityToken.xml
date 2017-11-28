@@ -1,0 +1,9 @@
+<wst:RequestSecurityToken Id="RST{0}">
+  <wst:RequestType>http://schemas.xmlsoap.org/ws/2004/04/security/trust/Issue</wst:RequestType>
+  <wsp:AppliesTo>
+    <wsa:EndpointReference>
+      <wsa:Address>{1}</wsa:Address>
+    </wsa:EndpointReference>
+  </wsp:AppliesTo>
+  <wsse:PolicyReference URI="{2}"></wsse:PolicyReference>
+</wst:RequestSecurityToken>
